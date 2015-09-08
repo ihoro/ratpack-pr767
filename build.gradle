@@ -1,0 +1,11 @@
+plugins {
+  id 'io.ratpack.ratpack-groovy' version '0.9.19'
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.netflix.governator:governator:1.9.3'
+}
