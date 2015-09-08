@@ -25,8 +25,10 @@ ratpack {
   handlers {
     register(Guice.registry(governatorInjector))
     get {
-      println context.get(Conf).prop1 // works
-      println context.get(Foo).conf.prop1 // null, i.e. it's a brand new Conf instance
+      println context.get(Conf).prop1                     // gives null
+      println context.get(Foo).conf.prop1                 // gives null
+      println context.get(Conf).is(context.get(Foo).conf) // the same instance
+
       render 'hi'
     }
   }
